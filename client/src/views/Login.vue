@@ -61,30 +61,6 @@ const chechk = () => {
 
 <template>
   <div class="login-panel">
-    <p>{{ adminStore.num }}</p>
-    <button @click="adminStore.addNum()">click</button>
-    <div class="demo-time-range">
-      <el-time-select
-        v-model="startTime"
-        style="width: 240px"
-        :max-time="timePick[timePick.length-1]"
-        class="mr-4"
-        placeholder="Start time"
-        start="08:30"
-        step="00:15"
-        end="18:30"
-      />
-      <el-time-select
-        v-model="endTime"
-        style="width: 240px"
-        :max-time="timePick[timePick.length-1]"
-        placeholder="End time"
-        start="08:30"
-        step="00:15"
-        end="18:30"
-      />
-    </div>
-    <input type="radio" :value="isClick" :checked="isClick" @click="chechk" />
     <n-card title="管理后台登录">
       <n-form :rules="rules" :model="admin">
         <n-form-item path="account" label="账号">
@@ -113,39 +89,6 @@ const chechk = () => {
   margin-top: 130px;
 }
 </style>
-
-<!-- 父组件 -->
-<!-- <template>
-  <div v-if="show">
-    <Child1 v-model="abc"></Child1>
-    <Child2 ></Child2>
-  </div>
-  <button @click="change">click</button>
-  <p>abc in parent component: {{ abc }}</p>
-</template>
-
-<script setup>
-import { ref, defineAsyncComponent } from "vue";
-const Child1 = defineAsyncComponent(() =>
-  import("./Chilrden.vue").then((module) => {
-    module.default.name = "Child1";
-    return module;
-  })
-);
-const Child2 = defineAsyncComponent(() =>
-  import("./Chilrden2.vue").then((module) => {
-    module.default.name = "Child2";
-    return module;
-  })
-);
-
-const abc = ref("adsfa");
-const show = ref(false);
-function change() {
-  show.value = !show.value;
-}
-</script> -->
-
 
 <style lang="scss" scoped>
 </style>
